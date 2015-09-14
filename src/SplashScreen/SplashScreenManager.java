@@ -18,12 +18,12 @@ public class SplashScreenManager {
     
     public SplashScreenManager() {}
     
-    static void renderSplashFrame(Graphics2D g, int frame) {
-        g.setComposite(AlphaComposite.Clear);
-        g.fillRect(120,140,200,40);
-        g.setPaintMode();
-        g.setColor(Color.BLACK);
-        g.drawString("Loading "+comps[(frame/5)%3]+"...", 120, 150);
+    static void renderSplashFrame(Graphics2D graphic, int frame) {
+        graphic.setComposite(AlphaComposite.Clear);
+        graphic.fillRect(120,140,200,40);
+        graphic.setPaintMode();
+        graphic.setColor(Color.BLACK);
+        graphic.drawString("Loading "+comps[(frame/5)%3]+"...", 120, 150);
     }
     public void runSplash() {
         
@@ -34,14 +34,14 @@ public class SplashScreenManager {
             return;
         }
         
-        Graphics2D g = splash.createGraphics();
-        if (g == null) {
+        Graphics2D graphic = splash.createGraphics();
+        if (graphic == null) {
             System.out.println("g is null");
             return;
         }
         
         for(int i=0; i<100; i++) {
-            renderSplashFrame(g, i);
+            renderSplashFrame(graphic, i);
             splash.update();
             try {
                 Thread.sleep(90);
