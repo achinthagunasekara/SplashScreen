@@ -28,15 +28,18 @@ public class SplashScreenManager {
     public void runSplash() {
         
         final SplashScreen splash = SplashScreen.getSplashScreen();
+        
         if (splash == null) {
             System.out.println("SplashScreen.getSplashScreen() returned null");
             return;
         }
+        
         Graphics2D g = splash.createGraphics();
         if (g == null) {
             System.out.println("g is null");
             return;
         }
+        
         for(int i=0; i<100; i++) {
             renderSplashFrame(g, i);
             splash.update();
