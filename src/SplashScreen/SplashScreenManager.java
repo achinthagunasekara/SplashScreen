@@ -25,6 +25,7 @@ public class SplashScreenManager {
         graphic.setColor(Color.BLACK);
         graphic.drawString("Loading "+comps[(frame/5)%3]+"...", 120, 150);
     }
+    
     public void runSplash() {
         
         final SplashScreen splash = SplashScreen.getSplashScreen();
