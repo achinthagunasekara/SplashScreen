@@ -48,6 +48,8 @@ public class SplashScreenManager {
                 Thread.sleep(90);
             }
             catch(InterruptedException e) {
+                
+                System.out.println(e.getMessage());
             }
         }
         splash.close();
